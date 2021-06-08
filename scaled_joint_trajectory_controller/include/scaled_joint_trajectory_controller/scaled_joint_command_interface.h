@@ -32,6 +32,8 @@
 
 //----------------------------------------------------------------------
 /*!\file
+ * based on
+ * https://github.com/ros-controls/ros_control/blob/melodic-devel/hardware_interface/include/hardware_interface/joint_command_interface.h
  *
  * \author  Felix Exner exner@fzi.de
  * \date    2019-04-18
