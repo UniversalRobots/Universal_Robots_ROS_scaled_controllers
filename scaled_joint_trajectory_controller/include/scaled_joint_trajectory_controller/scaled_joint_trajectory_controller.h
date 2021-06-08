@@ -2,6 +2,7 @@
 
 // -- BEGIN LICENSE BLOCK ----------------------------------------------
 // Copyright 2019 FZI Forschungszentrum Informatik
+// Created on behalf of Universal Robots A/S
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,13 +25,13 @@
  *
  */
 //----------------------------------------------------------------------
-#ifndef UR_CONTROLLERS_SCALED_TRAJECTORY_CONTROLLER_H_INCLUDED
-#define UR_CONTROLLERS_SCALED_TRAJECTORY_CONTROLLER_H_INCLUDED
+#ifndef SCALED_JOINT_TRAJECTORY_CONTROLLER_SCALED_TRAJECTORY_CONTROLLER_H_INCLUDED
+#define SCALED_JOINT_TRAJECTORY_CONTROLLER_SCALED_TRAJECTORY_CONTROLLER_H_INCLUDED
 
-#include "ur_controllers/hardware_interface_adapter.h"
+#include "scaled_joint_trajectory_controller/hardware_interface_adapter.h"
 #include <joint_trajectory_controller/joint_trajectory_controller.h>
 
-namespace ur_controllers
+namespace scaled_joint_trajectory_controller
 {
 template <class SegmentImpl, class HardwareInterface>
 class ScaledJointTrajectoryController
@@ -202,6 +203,6 @@ protected:
 private:
   /* data */
 };
-}  // namespace ur_controllers
+}  // namespace scaled_joint_trajectory_controller
 
-#endif  // ifndef UR_CONTROLLERS_SCALED_TRAJECTORY_CONTROLLER_H_INCLUDED
+#endif  // ifndef SCALED_JOINT_TRAJECTORY_CONTROLLER_SCALED_TRAJECTORY_CONTROLLER_H_INCLUDED

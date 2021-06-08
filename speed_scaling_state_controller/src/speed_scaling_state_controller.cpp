@@ -2,6 +2,7 @@
 
 // -- BEGIN LICENSE BLOCK ----------------------------------------------
 // Copyright 2019 FZI Forschungszentrum Informatik
+// Created on behalf of Universal Robots A/S
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,13 +26,13 @@
  */
 //----------------------------------------------------------------------
 
-#include "ur_controllers/speed_scaling_state_controller.h"
+#include "speed_scaling_state_controller/speed_scaling_state_controller.h"
 
 #include <pluginlib/class_list_macros.hpp>
 
-namespace ur_controllers
+namespace scaled_controllers
 {
-bool SpeedScalingStateController::init(SpeedScalingInterface* hw, ros::NodeHandle& root_nh,
+bool SpeedScalingStateController::init(hardware_interface::SpeedScalingInterface* hw, ros::NodeHandle& root_nh,
                                        ros::NodeHandle& controller_nh)
 {
   // get all joint states from the hardware interface
@@ -96,6 +97,6 @@ void SpeedScalingStateController::update(const ros::Time& time, const ros::Durat
 void SpeedScalingStateController::stopping(const ros::Time& /*time*/)
 {
 }
-}  // namespace ur_controllers
+}  // namespace scaled_controllers
 
-PLUGINLIB_EXPORT_CLASS(ur_controllers::SpeedScalingStateController, controller_interface::ControllerBase)
+PLUGINLIB_EXPORT_CLASS(scaled_controllers::SpeedScalingStateController, controller_interface::ControllerBase)

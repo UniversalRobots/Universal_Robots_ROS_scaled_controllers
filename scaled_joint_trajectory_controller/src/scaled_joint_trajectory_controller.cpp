@@ -2,6 +2,7 @@
 
 // -- BEGIN LICENSE BLOCK ----------------------------------------------
 // Copyright 2019 FZI Forschungszentrum Informatik
+// Created on behalf of Universal Robots A/S
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,23 +26,25 @@
  */
 //----------------------------------------------------------------------
 
-#include "ur_controllers/scaled_joint_trajectory_controller.h"
-#include "ur_controllers/scaled_joint_command_interface.h"
+#include "scaled_joint_trajectory_controller/scaled_joint_trajectory_controller.h"
+#include "scaled_joint_trajectory_controller/scaled_joint_command_interface.h"
 
 #include <pluginlib/class_list_macros.hpp>
 #include <trajectory_interface/quintic_spline_segment.h>
 
 namespace position_controllers
 {
-typedef ur_controllers::ScaledJointTrajectoryController<trajectory_interface::QuinticSplineSegment<double>,
-                                                        ur_controllers::ScaledPositionJointInterface>
+typedef scaled_joint_trajectory_controller::ScaledJointTrajectoryController<
+    trajectory_interface::QuinticSplineSegment<double>,
+    scaled_joint_trajectory_controller::ScaledPositionJointInterface>
     ScaledJointTrajectoryController;
 }
 
 namespace velocity_controllers
 {
-typedef ur_controllers::ScaledJointTrajectoryController<trajectory_interface::QuinticSplineSegment<double>,
-                                                        ur_controllers::ScaledVelocityJointInterface>
+typedef scaled_joint_trajectory_controller::ScaledJointTrajectoryController<
+    trajectory_interface::QuinticSplineSegment<double>,
+    scaled_joint_trajectory_controller::ScaledVelocityJointInterface>
     ScaledJointTrajectoryController;
 }
 

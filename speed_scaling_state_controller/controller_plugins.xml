@@ -1,0 +1,8 @@
+<library path="lib/libspeed_scaling_state_controller">
+  <class name="scaled_controllers/SpeedScalingStateController" type="scaled_controllers::SpeedScalingStateController" base_class_type="controller_interface::ControllerBase">
+  <description>
+    This controller publishes the readings of all available speed scaling factors.
+  </description>
+  </class>
+</library>
+

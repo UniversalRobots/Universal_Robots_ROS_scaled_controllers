@@ -2,6 +2,7 @@
 
 // -- BEGIN LICENSE BLOCK ----------------------------------------------
 // Copyright 2019 FZI Forschungszentrum Informatik
+// Created on behalf of Universal Robots A/S
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,11 +26,11 @@
  */
 //----------------------------------------------------------------------
 
-#ifndef UR_CONTROLLERS_HARDWARE_INTERFACE_ADAPTER_H_INCLUDED
-#define UR_CONTROLLERS_HARDWARE_INTERFACE_ADAPTER_H_INCLUDED
+#ifndef SCALED_JOINT_TRAJECTORY_CONTROLLER_HARDWARE_INTERFACE_ADAPTER_H_INCLUDED
+#define SCALED_JOINT_TRAJECTORY_CONTROLLER_HARDWARE_INTERFACE_ADAPTER_H_INCLUDED
 
 #include <joint_trajectory_controller/hardware_interface_adapter.h>
-#include "ur_controllers/scaled_joint_command_interface.h"
+#include "scaled_joint_trajectory_controller/scaled_joint_command_interface.h"
 
 /**
  * \brief Adapter for a position-controlled hardware interface. Forwards desired positions as commands.
@@ -52,14 +53,15 @@
  * \endcode
  */
 template <class State>
-class HardwareInterfaceAdapter<ur_controllers::ScaledPositionJointInterface, State>
+class HardwareInterfaceAdapter<scaled_joint_trajectory_controller::ScaledPositionJointInterface, State>
 {
 public:
   HardwareInterfaceAdapter() : joint_handles_ptr_(0)
   {
   }
 
-  bool init(std::vector<ur_controllers::ScaledJointHandle>& joint_handles, ros::NodeHandle& /*controller_nh*/)
+  bool init(std::vector<scaled_joint_trajectory_controller::ScaledJointHandle>& joint_handles,
+            ros::NodeHandle& /*controller_nh*/)
   {
     // Store pointer to joint handles
     joint_handles_ptr_ = &joint_handles;
@@ -97,10 +99,10 @@ public:
   }
 
 private:
-  std::vector<ur_controllers::ScaledJointHandle>* joint_handles_ptr_;
+  std::vector<scaled_joint_trajectory_controller::ScaledJointHandle>* joint_handles_ptr_;
 };
 
-namespace ur_controllers
+namespace scaled_joint_trajectory_controller
 {
 /**
  * \brief Helper base class template for closed loop HardwareInterfaceAdapter implementations.
@@ -119,7 +121,8 @@ public:
   {
   }
 
-  bool init(std::vector<ur_controllers::ScaledJointHandle>& joint_handles, ros::NodeHandle& controller_nh)
+  bool init(std::vector<scaled_joint_trajectory_controller::ScaledJointHandle>& joint_handles,
+            ros::NodeHandle& controller_nh)
   {
     // Store pointer to joint handles
     joint_handles_ptr_ = &joint_handles;
@@ -195,9 +198,9 @@ private:
 
   std::vector<double> velocity_ff_;
 
-  std::vector<ur_controllers::ScaledJointHandle>* joint_handles_ptr_;
+  std::vector<scaled_joint_trajectory_controller::ScaledJointHandle>* joint_handles_ptr_;
 };
-}  // namespace ur_controllers
+}  // namespace scaled_joint_trajectory_controller
 
 /**
  * \brief Adapter for an velocity-controlled hardware interface. Maps position and velocity errors to velocity commands
@@ -223,9 +226,9 @@ private:
  * \endcode
  */
 template <class State>
-class HardwareInterfaceAdapter<ur_controllers::ScaledVelocityJointInterface, State>
-  : public ur_controllers::ClosedLoopHardwareInterfaceAdapter<State>
+class HardwareInterfaceAdapter<scaled_joint_trajectory_controller::ScaledVelocityJointInterface, State>
+  : public scaled_joint_trajectory_controller::ClosedLoopHardwareInterfaceAdapter<State>
 {
 };
 
-#endif  // ifndef UR_CONTROLLERS_HARDWARE_INTERFACE_ADAPTER_H_INCLUDED
+#endif  // ifndef SCALED_JOINT_TRAJECTORY_CONTROLLER_HARDWARE_INTERFACE_ADAPTER_H_INCLUDED
