@@ -31,7 +31,7 @@
 #include "scaled_joint_trajectory_controller/hardware_interface_adapter.h"
 #include <joint_trajectory_controller/joint_trajectory_controller.h>
 
-namespace scaled_joint_trajectory_controller
+namespace scaled_controllers
 {
 template <class SegmentImpl, class HardwareInterface>
 class ScaledJointTrajectoryController
@@ -203,6 +203,6 @@ protected:
 private:
   /* data */
 };
-}  // namespace scaled_joint_trajectory_controller
+}  // namespace scaled_controllers
 
 #endif  // ifndef SCALED_JOINT_TRAJECTORY_CONTROLLER_SCALED_TRAJECTORY_CONTROLLER_H_INCLUDED
