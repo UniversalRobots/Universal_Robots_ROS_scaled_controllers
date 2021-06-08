@@ -1,7 +1,6 @@
-// this is for emacs file handling -*- mode: c++; indent-tabs-mode: nil -*-
-
 // -- BEGIN LICENSE BLOCK ----------------------------------------------
 // Copyright 2019 FZI Forschungszentrum Informatik
+// Created on behalf of Universal Robots A/S
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,12 +24,18 @@
  */
 //----------------------------------------------------------------------
 
-#ifndef UR_CONTROLLERS_SPEED_SCALING_INTERFACE_H_INCLUDED
-#define UR_CONTROLLERS_SPEED_SCALING_INTERFACE_H_INCLUDED
+
+//----------------------------------------------------------------------
+//
+// Note: This file was modified from the original.
+//
+//----------------------------------------------------------------------
+
+#pragma once
 
 #include <hardware_interface/internal/hardware_resource_manager.h>
 
-namespace ur_controllers
+namespace hardware_interface
 {
 class SpeedScalingHandle
 {
@@ -58,6 +63,4 @@ private:
 class SpeedScalingInterface : public hardware_interface::HardwareResourceManager<SpeedScalingHandle>
 {
 };
-}  // namespace ur_controllers
-
-#endif  // ifndef UR_CONTROLLERS_SPEED_SCALING_INTERFACE_H_INCLUDED
+}  // namespace hardware_interface
