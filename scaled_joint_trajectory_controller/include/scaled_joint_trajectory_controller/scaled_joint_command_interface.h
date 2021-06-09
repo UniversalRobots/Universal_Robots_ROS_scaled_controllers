@@ -48,7 +48,7 @@
 #include <hardware_interface/joint_state_interface.h>
 #include <hardware_interface/joint_command_interface.h>
 
-namespace scaled_joint_trajectory_controller
+namespace scaled_controllers
 {
 class ScaledJointHandle : public hardware_interface::JointHandle
 {
@@ -124,5 +124,5 @@ class ScaledVelocityJointInterface : public ScaledJointCommandInterface
 class ScaledPositionJointInterface : public ScaledJointCommandInterface
 {
 };
-}  // namespace scaled_joint_trajectory_controller
+}  // namespace scaled_controllers
 #endif  // ifndef SCALED_JOINT_TRAJECTORY_CONTROLLER_SCALED_JOINT_COMMAND_INTERFACE_H_INCLUDED

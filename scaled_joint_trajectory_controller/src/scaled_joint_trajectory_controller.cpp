@@ -34,17 +34,15 @@
 
 namespace position_controllers
 {
-typedef scaled_joint_trajectory_controller::ScaledJointTrajectoryController<
-    trajectory_interface::QuinticSplineSegment<double>,
-    scaled_joint_trajectory_controller::ScaledPositionJointInterface>
+typedef scaled_controllers::ScaledJointTrajectoryController<trajectory_interface::QuinticSplineSegment<double>,
+                                                            scaled_controllers::ScaledPositionJointInterface>
     ScaledJointTrajectoryController;
 }
 
 namespace velocity_controllers
 {
-typedef scaled_joint_trajectory_controller::ScaledJointTrajectoryController<
-    trajectory_interface::QuinticSplineSegment<double>,
-    scaled_joint_trajectory_controller::ScaledVelocityJointInterface>
+typedef scaled_controllers::ScaledJointTrajectoryController<trajectory_interface::QuinticSplineSegment<double>,
+                                                            scaled_controllers::ScaledVelocityJointInterface>
     ScaledJointTrajectoryController;
 }
 
