@@ -37,20 +37,20 @@
 
 namespace scaled_controllers
 {
-class SpeedScalingStateController : public controller_interface::Controller<hardware_interface::SpeedScalingInterface>
+class SpeedScalingStateController : public controller_interface::Controller<scaled_controllers::SpeedScalingInterface>
 {
 public:
   SpeedScalingStateController() = default;
   virtual ~SpeedScalingStateController() override = default;
 
-  virtual bool init(hardware_interface::SpeedScalingInterface* hw, ros::NodeHandle& root_nh,
+  virtual bool init(scaled_controllers::SpeedScalingInterface* hw, ros::NodeHandle& root_nh,
                     ros::NodeHandle& controller_nh) override;
   virtual void starting(const ros::Time& time) override;
   virtual void update(const ros::Time& time, const ros::Duration& /*period*/) override;
   virtual void stopping(const ros::Time& /*time*/) override;
 
 private:
-  std::vector<hardware_interface::SpeedScalingHandle> sensors_;
+  std::vector<scaled_controllers::SpeedScalingHandle> sensors_;
   // TODO: We should use a custom message for this
   typedef std::shared_ptr<realtime_tools::RealtimePublisher<std_msgs::Float64> > RtPublisherPtr;
   std::vector<RtPublisherPtr> realtime_pubs_;

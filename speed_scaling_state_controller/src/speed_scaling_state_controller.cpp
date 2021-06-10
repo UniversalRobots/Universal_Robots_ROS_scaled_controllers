@@ -32,7 +32,7 @@
 
 namespace scaled_controllers
 {
-bool SpeedScalingStateController::init(hardware_interface::SpeedScalingInterface* hw, ros::NodeHandle& root_nh,
+bool SpeedScalingStateController::init(scaled_controllers::SpeedScalingInterface* hw, ros::NodeHandle& root_nh,
                                        ros::NodeHandle& controller_nh)
 {
   // get all joint states from the hardware interface
