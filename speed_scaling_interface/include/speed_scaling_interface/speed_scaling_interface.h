@@ -34,7 +34,7 @@
 
 #include <hardware_interface/internal/hardware_resource_manager.h>
 
-namespace hardware_interface
+namespace scaled_controllers
 {
 class SpeedScalingHandle
 {
@@ -62,4 +62,4 @@ private:
 class SpeedScalingInterface : public hardware_interface::HardwareResourceManager<SpeedScalingHandle>
 {
 };
-}  // namespace hardware_interface
+}  // namespace scaled_controllers
