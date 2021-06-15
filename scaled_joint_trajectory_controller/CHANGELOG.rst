@@ -2,8 +2,8 @@
 Changelog for package scaled_joint_trajectory_controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.1 (2021-06-15)
+------------------
 * Require same CMake version in all packages
 * Contributors: Felix Exner
 
