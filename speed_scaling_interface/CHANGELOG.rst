@@ -2,6 +2,9 @@
 Changelog for package speed_scaling_interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.0 (2021-06-10)
 ------------------
 * Moved speed scaling interface to own package
