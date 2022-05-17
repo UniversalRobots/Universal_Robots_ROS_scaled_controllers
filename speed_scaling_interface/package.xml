@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
   <name>speed_scaling_interface</name>
   <version>0.1.1</version>
@@ -7,11 +8,9 @@
   <maintainer email="exner@fzi.de">Felix Exner</maintainer>
   <license>Apache-2.0</license>
 
-
   <url type="website">http://wiki.ros.org/speed_scaling_interface</url>
 
   <author email="exner@fzi.de">Felix Exner</author>
-
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>hardware_interface</build_depend>
